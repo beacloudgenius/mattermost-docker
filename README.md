@@ -1,3 +1,21 @@
+I did this guide as a regular user, not root.
+
+    git clone https://github.com/beacloudgenius/mattermost-docker/
+
+    cd mattermost-docker
+
+Edit the docker-compose.yml and change the UID and the GID to your current running user
+
+IMPORTANT! docker-compose build to build the new image
+
+    mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
+
+You dont need to set the file/folder ownerships with chown now, as you used your current user
+
+    docker-compose up
+
+
+
 # Production Docker deployment for Mattermost
 
 This project enables deployment of a Mattermost server in a multi-node production configuration using Docker.
